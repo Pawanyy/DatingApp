@@ -333,6 +333,8 @@ __pycache__/
 *.xsd.cs
 
 *.db
+*.db-shm
+*.db-wal
 
 # OpenCover UI analysis results
 OpenCover/
