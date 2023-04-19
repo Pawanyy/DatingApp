@@ -332,10 +332,6 @@ __pycache__/
 *.odx.cs
 *.xsd.cs
 
-*.db
-*.db-shm
-*.db-wal
-
 # OpenCover UI analysis results
 OpenCover/
 
@@ -365,3 +361,9 @@ MigrationBackup/
 
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
+
+*.db
+*.db-shm
+*.db-wal
+
+API/appsettings.json
