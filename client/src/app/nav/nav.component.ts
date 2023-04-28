@@ -9,6 +9,7 @@ import { AccountService } from '../_services/account.service';
 export class NavComponent {
 
   model: any = {};
+  loggedIn: boolean = false;
 
   constructor(private accountService: AccountService) {
   }
@@ -17,10 +18,14 @@ export class NavComponent {
     this.accountService.login(this.model).subscribe({
       next: response => {
         console.log(response)
+        this.loggedIn = true;
       },
       error: err => console.log(err),
       complete: () => console.log('Login Successfully!')
     })
+  }
+  logout() {
+    console.log('Logout!');
   }
 
 }
