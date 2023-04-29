@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'app-register',
@@ -8,6 +8,7 @@ import { Component, Input } from '@angular/core';
 export class RegisterComponent {
 
   @Input() usersFromHomeComponent: any;
+  @Output() cancelRegister = new EventEmitter();
   model: any = {}
 
   register() {
@@ -15,7 +16,7 @@ export class RegisterComponent {
   }
 
   cancel() {
-    console.log("cancel");
+    this.cancelRegister.emit(false);
   }
 
 }
