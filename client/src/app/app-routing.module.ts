@@ -5,13 +5,14 @@ import { NotFoundComponent } from './errors/not-found/not-found.component';
 import { MemberListComponent } from './member/member-list/member-list.component';
 import { MemberDetailComponent } from './member/member-detail/member-detail.component';
 import { MessagesComponent } from './messages/messages.component';
+import { AuthGuard } from './_guards/auth.guard';
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
-  {path: 'members', component: MemberListComponent},
-  {path: 'members/:id', component: MemberListComponent},
-  {path: 'lists', component: MemberDetailComponent},
-  {path: 'messages', component: MessagesComponent},
+  {path: 'members', component: MemberListComponent, canActivate: [AuthGuard]},
+  {path: 'members/:id', component: MemberListComponent, canActivate: [AuthGuard]},
+  {path: 'lists', component: MemberDetailComponent, canActivate: [AuthGuard]},
+  {path: 'messages', component: MessagesComponent, canActivate: [AuthGuard]},
   {path: '**', component: NotFoundComponent, pathMatch: 'full'},
 ];
 
