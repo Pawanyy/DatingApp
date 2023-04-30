@@ -15,6 +15,7 @@ import { MemberDetailComponent } from './member/member-detail/member-detail.comp
 import { ListsComponent } from './lists/lists.component';
 import { MessagesComponent } from './messages/messages.component';
 import { NotFoundComponent } from './errors/not-found/not-found.component';
+import { ToastrModule } from 'ngx-toastr';
 
 @NgModule({
   declarations: [
@@ -33,6 +34,10 @@ import { NotFoundComponent } from './errors/not-found/not-found.component';
     AppRoutingModule,
     HttpClientModule,
     BrowserAnimationsModule,
+    ToastrModule.forRoot({
+      positionClass: 'toast-bottom-right',
+      // preventDuplicates: true,
+    }),
     FormsModule,
     BsDropdownModule.forRoot()
   ],
